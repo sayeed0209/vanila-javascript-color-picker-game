@@ -1,0 +1,174 @@
+body {
+  background-color: #232323;
+  margin: 0;
+}
+
+.round {
+  width: 30%;
+  background: #8c1bab;
+  padding-bottom: 30%;
+  float: left;
+  margin: 1.66%;
+  border-radius: 50%;
+  transition: background 0.5s;
+  -webkit-transition: background 0.7s;
+  -moz-transition: background 0.7s;
+}
+
+.container {
+  max-width: 300px;
+  margin: 20px auto;
+  z-index: 1;
+}
+
+#rgb_display {
+  font-size: 80px;
+}
+
+h1 {
+  color: white;
+  text-transform: uppercase;
+  line-height: 1.1;
+  padding: 10px 0;
+  text-align: center;
+  margin: 0;
+  font-family: 'Lato', sans-serif;
+  font-weight: normal;
+}
+
+#instra {
+  position: relative;
+  bottom: 200px;
+  right: 750px;
+  font-family: 'Lato', sans-serif;
+  text-transform: uppercase;
+  color: #f761a1;
+  
+
+}
+button {
+  text-align: center;
+  cursor: pointer;
+  height: 100%;
+  letter-spacing: 1px;
+  font-weight: 700;
+  border: none;
+  display: inline-block;
+  border-radius: 3px;
+  text-decoration: none;
+  font-family: 'Lato', sans-serif;
+  font-size: 16px;
+  text-transform: uppercase;
+  outline: none;
+  background-image: linear-gradient(-45deg, #f761a1 0, #8c1bab 100%);
+  box-shadow: 0 3px 13px 0 rgba(14, 9, 73, 0.2),
+    0 11px 21px 0 rgba(255, 166, 220, 0.004);
+}
+
+button:hover {
+  color: white;
+
+}
+
+#message {
+  display: inline-block;
+  width: 20%;
+}
+
+#textrow {
+  background: white;
+  height: 30px;
+  text-align: center;
+  color: black;
+}
+
+.selected {
+  color: white;
+}
+
+.tuna {
+  animation: walk-cycle 1s steps(12) infinite;
+  background: url(http://stash.rachelnabors.com/img/codepen/tuna_sprite.png) 0 0
+    no-repeat;
+  height: 200px;
+  width: 400px;
+  position: absolute;
+  top: 160px;
+  left: 50%;
+  margin-left: -200px;
+  transform: translateZ(0);
+  /* offers a bit of a performance boost by pushing some of this processing to the GPU in Safari*/
+}
+
+@keyframes walk-cycle {
+  0% {
+    background-position: 0 0;
+  }
+
+  100% {
+    background-position: 0 -2391px;
+  }
+}
+
+.foreground,
+.midground,
+.background {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  z-index: 0;
+  top: 420px;
+  left: 0;
+}
+
+.foreground {
+  animation: parallax_fg linear 10s infinite both;
+  background: url(http://stash.rachelnabors.com/24ways2012/foreground_grass.png)
+    0 100% repeat-x;
+  z-index: -1;
+}
+
+@keyframes parallax_fg {
+  0% {
+    background-position: -3584px 100%;
+  }
+
+  100% {
+    background-position: 0 100%;
+  }
+}
+
+.midground {
+  animation: parallax_mg linear 20s infinite;
+  background: url(http://stash.rachelnabors.com/24ways2012/midground_grass.png)
+    0 100% repeat-x;
+  z-index: -2;
+}
+
+@keyframes parallax_mg {
+  0% {
+    background-position: -3000px 100%;
+  }
+
+  100% {
+    background-position: 0 100%;
+  }
+}
+
+.background {
+  background-image: url(http://stash.rachelnabors.com/24ways2012/background_mountain5.png),
+    url(http://stash.rachelnabors.com/24ways2012/background_mountain4.png),
+    url(http://stash.rachelnabors.com/24ways2012/background_mountain3.png),
+    url(http://stash.rachelnabors.com/24ways2012/background_mountain2.png),
+    url(http://stash.rachelnabors.com/24ways2012/background_mountain1.png);
+  background-repeat: repeat-x;
+  background-position: 0 100%;
+  z-index: -5;
+  animation: parallax_bg linear 40s infinite;
+}
+
+@keyframes parallax_bg {
+  100% {
+    background-position-x: 2400px, 2000px, 1800px, 1600px, 1200px;
+  }
+}
